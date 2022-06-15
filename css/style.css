@@ -1,0 +1,53 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #7fffd4;
+}
+
+/* HEADER */
+header{
+    height: 100px;
+    background-color: white;
+}
+#header_container{
+    background-color: coral;
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#header_title{
+    background-color: pink;
+    height: 100%;
+    width: 30%;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#header_title img{
+    width: 20%;
+    vertical-align: middle;
+    border: 1px solid black;
+}
+#header_title h1{
+    vertical-align: middle;
+    border: 1px solid black;
+
+}
+
+nav{
+    background-color: aqua;
+    height: 100%;
+    width: 30%;
+    padding: 0 15px;
+    
+    
+    
+}
