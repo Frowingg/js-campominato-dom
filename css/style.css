@@ -3,9 +3,7 @@
     margin: 0;
     box-sizing: border-box;
 }
-body{
-    background-color: #7fffd4;
-}
+
 
 /* HEADER */
 header{
@@ -50,4 +48,52 @@ nav #game_difficulty{
 }
 nav #play_btn{
     width: 25%;
+}
+
+/* MAIN */
+main{
+    background-color: #7fffd4;
+    height: calc(100vh - 80px - 50px);
+    display: flex;
+    justify-content:space-between;
+    flex-direction: column;
+    align-items: center;
+}
+main #game_grid{
+    width: 500px;
+    height: 500px;
+    margin-top: 50px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+}
+.square{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main #game_result{
+    width: 400px;
+    height: 20px;
+    margin-bottom: 50px;
+}
+
+
+/* FOOTER */
+footer{
+    height: 50px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+footer #footer_container{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
