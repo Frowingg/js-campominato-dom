@@ -68,24 +68,27 @@ main #game_grid{
     flex-wrap: wrap;
 }
 .square{
+    width: calc(100%/10);
+    height: calc(100%/10);
     border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 /* MAIN - DIFFICULTY */
-.easy{
-    width: calc(100% / 6);
-    height: calc(100% / 6);
-}
-.medium{
-    width: calc(100% / 8);
-    height: calc(100% / 8);
-}
-.hard{
+/* .easy{
     width: calc(100% / 10);
     height: calc(100% / 10);
 }
+.medium{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+.hard{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+} */
 
 main #game_result{
     width: 400px;

@@ -1,8 +1,8 @@
 // mi inizializzo le variabili
 const gameGrid = document.getElementById('game_grid');
 const playBnt = document.getElementById('play_btn');
-let bombs = [];
 let gameDifficulty;
+let bombs = [];
 console.log(bombs)
 console.log(gameDifficulty)
 
@@ -12,24 +12,25 @@ playBnt.addEventListener('click', play);
 
 //funzione PLAY
 function play() {
-    //controlla la difficolta scelta
-    gameDifficulty = document.getElementById('game_difficulty').value;
-    console.log(gameDifficulty)
-
     // in base alla difficoltà scelta dall'utente creo l'array con i numeri
-    switch(gameDifficulty) {
+    switch(parseInt(document.getElementById('game_difficulty').value)) {
         case 1:
             maxRange = 100;
-            prodBombs(1, maxRange);
+            // squareDim = 'easy'
+            bombs += prodBombs(1, maxRange);
+            numInGrid(maxRange)
             break;
-
         case 2:
             maxRange = 81;
-            prodBombs(1, maxRange);
+            // squareDim = 'medium'
+            bombs += prodBombs(1, maxRange);
+            numInGrid(maxRange)
             break;
         case 3:
             maxRange = 49;
-            prodBombs(1, maxRange);
+            // squareDim = 'hard'
+            bombs += prodBombs(1, maxRange);
+            numInGrid(maxRange)
             break;
     }
 }
@@ -41,22 +42,27 @@ let j = 0;
 
 // funzione che richiamo nello switch per produrre l'array
 function prodBombs(min, max) {
+    let tempArray = [];
     for(i=1; i<=16; i++) {
         num = getRndInteger(min, max);
-        if (bombs.includes(num)) {
+        if (tempArray.includes(num)) {
             i--;
         } else {
-            bombs.push(num);
+            tempArray.push(num);
         }        
     }
-    console.log(bombs)
+    return tempArray
 }
+
 // console.log('bombs',bombs)
 
 //metto i numeri nella griglia
-// for (i=1; i<=maxRange; i++) {
-//     gameGrid.innerHTML += `<div class='square'>${i}</div>`;
-// }
+function numInGrid(maxRange) {
+    for (i=1; i<=maxRange; i++) {
+        // gameGrid.innerHTML += `<div class='square ${squareDim}'>${i}</div>`;
+        gameGrid.innerHTML += `<div class='square'>${i}</div>`;
+    }
+}
 
 // while sul quale si basa il gioco che mi permette di controllare che le regole siano rispettate
 // while (game) {
