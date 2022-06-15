@@ -33,6 +33,27 @@ function play() {
             numInGrid(maxRange)
             break;
     }
+    console.log(bombs)
+    // while sul quale si basa il gioco che mi permette di controllare che le regole siano rispettate
+    userNumber = document.querySelectorAll('square')
+    console.log(userNumber)
+    // while (game) {
+    //     userNumber = document.querySelectorAll('square')
+    //     console.log(userNumber)
+    //     if (bombs.includes(userNumber)) {
+    //         alert('sei na pippa!')
+    //         alert(`tentativi giusti ${j}`)
+    //         game = false;
+    //     } else {
+    //         alert("c'hai preso!")
+    //         j++
+    //     }
+    //     if (j >= maxRange - bombs.lenght) {
+    //         game = false
+    //         alert(`hai vinto con ${j}`)
+    //     }
+    // }
+
 }
 
  
@@ -60,26 +81,10 @@ function prodBombs(min, max) {
 function numInGrid(maxRange) {
     for (i=1; i<=maxRange; i++) {
         // gameGrid.innerHTML += `<div class='square ${squareDim}'>${i}</div>`;
-        gameGrid.innerHTML += `<div class='square'>${i}</div>`;
+        gameGrid.innerHTML += `<div class='square'><p class='number_in_p>${i}</p></div>`;
     }
 }
 
-// while sul quale si basa il gioco che mi permette di controllare che le regole siano rispettate
-// while (game) {
-    // userNumber = parseInt(prompt('dammi un numero'));
-//     if (bombs.includes(userNumber)) {
-//         alert('sei na pippa!')
-//         alert(`tentativi giusti ${j}`)
-//         game = false;
-//     } else {
-//         alert("c'hai preso!")
-//         j++
-//     }
-//     if (j >= maxRange - bombs.lenght) {
-//         game = false
-//         alert(`hai vinto con ${j}`)
-//     }
-// }
 
 // funzione che uso per creare in maniera casuale i numeri da mettere nell'array
 function getRndInteger(min, max) {

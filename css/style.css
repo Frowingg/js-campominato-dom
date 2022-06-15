@@ -75,6 +75,7 @@ main #game_grid{
     justify-content: center;
     align-items: center;
 }
+
 /* MAIN - DIFFICULTY */
 /* .easy{
     width: calc(100% / 10);
