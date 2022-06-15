@@ -9,20 +9,18 @@ body{
 
 /* HEADER */
 header{
-    height: 100px;
+    height: 80px;
     background-color: white;
 }
-#header_container{
-    background-color: coral;
+header #header_container{
     height: 100%;
     width: 80%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
 }
-
+/* HEADER-LEFT */
 #header_title{
-    background-color: pink;
     height: 100%;
     width: 30%;
     padding: 0 15px;
@@ -32,22 +30,24 @@ header{
 }
 
 #header_title img{
-    width: 20%;
-    vertical-align: middle;
-    border: 1px solid black;
-}
-#header_title h1{
-    vertical-align: middle;
-    border: 1px solid black;
-
+    width: 70px;
+    padding: 13px;
 }
 
+/* HEADER-RIGHT */
 nav{
-    background-color: aqua;
     height: 100%;
     width: 30%;
     padding: 0 15px;
-    
-    
-    
+    display: flex;
+    align-items: center;
+}
+nav *{
+    margin: 3px;
+}
+nav #game_difficulty{
+    width: 50%;
+}
+nav #play_btn{
+    width: 25%;
 }
