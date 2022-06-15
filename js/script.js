@@ -1,8 +1,11 @@
 // mi inizializzo le variabili
 const gameGrid = document.getElementById('game_grid');
 const playBnt = document.getElementById('play_btn');
+const message = document.getElementById('game_result');
 let gameDifficulty;
 let bombs = [];
+let game = true;  
+let userNumber;
 console.log(bombs)
 console.log(gameDifficulty)
 
@@ -31,35 +34,37 @@ function play() {
             // squareDim = 'hard'
             bombs += prodBombs(1, maxRange);
             numInGrid(maxRange)
-            break;
+            break;   
     }
-    console.log(bombs)
-    // while sul quale si basa il gioco che mi permette di controllare che le regole siano rispettate
-    userNumber = document.querySelectorAll('square')
-    console.log(userNumber)
-    // while (game) {
-    //     userNumber = document.querySelectorAll('square')
-    //     console.log(userNumber)
-    //     if (bombs.includes(userNumber)) {
-    //         alert('sei na pippa!')
-    //         alert(`tentativi giusti ${j}`)
-    //         game = false;
-    //     } else {
-    //         alert("c'hai preso!")
-    //         j++
-    //     }
-    //     if (j >= maxRange - bombs.lenght) {
-    //         game = false
-    //         alert(`hai vinto con ${j}`)
-    //     }
-    // }
+    userNumbers = document.querySelectorAll('.square');
+    
+    for(let i = 0; i < userNumbers.length; i++) {
+        userNumber = userNumbers[i];
+        number = userNumber.innerHtml
+        userNumber.addEventListener('click', numberCheck(number));
+
+    }
 
 }
 
- 
-let game = true;
-let userNumber;
-let j = 0;
+function numberCheck(num) {
+    // while sul quale si basa il gioco che mi permette di controllare che le regole siano rispettate
+    while (game) {
+        let j = 0;
+        if (!(bombs.includes(num))) {
+            message = `peccato, hai perso! Hai azzeccato ${j} tentativi`;
+            game = false;
+        } else {
+            message = `c'hai preso!`;
+            j++;
+        }
+
+        if (j >= maxRange - bombs.lenght) {
+            game = false;
+            message = `hai vinto con ${j} tentativi`;
+        }
+    }
+}
 
 // funzione che richiamo nello switch per produrre l'array
 function prodBombs(min, max) {
@@ -75,16 +80,13 @@ function prodBombs(min, max) {
     return tempArray
 }
 
-// console.log('bombs',bombs)
-
 //metto i numeri nella griglia
 function numInGrid(maxRange) {
     for (i=1; i<=maxRange; i++) {
         // gameGrid.innerHTML += `<div class='square ${squareDim}'>${i}</div>`;
-        gameGrid.innerHTML += `<div class='square'><p class='number_in_p>${i}</p></div>`;
+        gameGrid.innerHTML += `<div class='square'>${i}</div>`;
     }
 }
-
 
 // funzione che uso per creare in maniera casuale i numeri da mettere nell'array
 function getRndInteger(min, max) {
