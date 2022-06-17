@@ -74,6 +74,19 @@ main #game_grid{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+}
+.non_pointer{
+    cursor: default;
+}
+.green_bg{
+    background-color: green;
+}
+.red_bg{
+    background-color: red;
+}
+#game_result{
+    text-align: center;
 }
 
 /* MAIN - DIFFICULTY */
